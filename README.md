@@ -1,6 +1,6 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/Ollaberganov-Mirzoxid/IMA/blob/main/public/assets/img/logo.png" width="400" alt="Laravel Logo"></a></p>
 
-<h1 align="center">IMA</h1>
+<h1 align="center" font-size="20px">IMA</h1>
 
 ## About Laravel
 
