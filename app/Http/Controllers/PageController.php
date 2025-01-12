@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\Conference;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -26,7 +28,11 @@ class PageController extends Controller
     //Ilmiy-Amaliy Anjumanlar sahifasini ko'rsatish
     public function index()
     {
-        return view('welcome');
+        $latestConference = Conference::latest()->take(4)->get();
+        $latestArticles = Article::latest()->take(4)->get();
+
+        return view('welcome')->with('latestArticles', $latestArticles)
+        ->with('latestConference', $latestConference);
     }
 
     //Maqolalar sahifasini ko'rsatish

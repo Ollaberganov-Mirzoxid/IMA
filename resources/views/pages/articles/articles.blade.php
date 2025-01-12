@@ -20,78 +20,30 @@
                 <h1>Barcha Maqolalar</h1>
             </div>
             <div class="latest-conferences-content">
-                <div class="latest-conference">
-                    <div class="latest-article-in">
-                        <div class="latest-article-img">
-                            <img src="assets/img/Sport.jpg" alt="">
-                        </div>
-                        <div class="latest-article-texts">
-                            <div class="article-title">
-                                <h4>Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Unde</h4>
-                            </div>
-                            <div class="buttons">
-                                <a class="view" href=""><i class="fas fa-eye"></i> Ko'rish</a>
-                                <a class="download" href=""><i class="fas fa-download"></i> Yuklab olish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="latest-conference">
-                    <div class="latest-article-in">
-                        <div class="latest-article-img">
-                            <img src="assets/img/Business.jpg" alt="">
-                        </div>
-                        <div class="latest-article-texts">
-                            <div class="article-title">
-                                <h4>Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Unde</h4>
-                            </div>
-                            <div class="buttons">
-                                <a class="view" href=""><i class="fas fa-eye"></i> Ko'rish</a>
-                                <a class="download" href=""><i class="fas fa-download"></i> Yuklab olish</a>
-                            </div>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="latest-conference">
-                    <div class="latest-article-in">
-                        <div class="latest-article-img">
-                            <img src="assets/img/Cyber.jpg" alt="">
-                        </div>
-                        <div class="latest-article-texts">
-                            <div class="article-title">
-                                <h4>Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Unde</h4>
+                @foreach ($articles as $article)
+                    <div class="latest-conference">
+                        <div class="latest-article-in">
+                            <div class="latest-article-img">
+                                <img src="{{ asset('assets/images/' . strtolower($article->category) . '.jpg') }}" alt="">
                             </div>
-                            <div class="buttons">
-                                <a class="view" href=""><i class="fas fa-eye"></i> Ko'rish</a>
-                                <a class="download" href=""><i class="fas fa-download"></i> Yuklab olish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="latest-conference">
-                    <div class="latest-article-in">
-                        <div class="latest-article-img">
-                            <img src="assets/img/Technology.jpg" alt="">
-                        </div>
-                        <div class="latest-article-texts">
-                            <div class="article-title">
-                                <h4>Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Unde</h4>
-                            </div>
-                            <div class="buttons">
-                                <a class="view" href=""><i class="fas fa-eye"></i> Ko'rish</a>
-                                <a class="download" href=""><i class="fas fa-download"></i> Yuklab olish</a>
+                            <div class="latest-article-texts">
+                                <div class="article-title">
+                                    <h4>{{ $article->title }}</h4>
+                                </div>
+                                <div class="buttons">
+                                    <a class="view" href="{{ asset('storage/' . $article->file_path) }}"  target="_blank">
+                                        <i class="fas fa-eye"></i> Ko'rish</a>
+                                    <a class="download" href="{{ asset('storage/' . $article->file_path) }}" download>
+                                        <i class="fas fa-download"></i> Yuklab olish
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
-    </div>
-    <!--Latest Articles End-->
+        <!--Latest Articles End-->
 
-@endsection
+    @endsection

@@ -30,13 +30,11 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
             <span class="carousel-control-next-icon next" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -197,75 +195,28 @@
                 <h1>Eng so'ngi Maqolalar</h1>
             </div>
             <div class="latest-conferences-content">
-                <div class="latest-conference">
-                    <div class="latest-article-in">
-                        <div class="latest-article-img">
-                            <img src="assets/img/Sport.jpg" alt="">
-                        </div>
-                        <div class="latest-article-texts">
-                            <div class="article-title">
-                                <h4>Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Unde</h4>
+                @foreach ($latestArticles as $article)
+                    <div class="latest-conference">
+                        <div class="latest-article-in">
+                            <div class="latest-article-img">
+                                <img src="{{ asset('assets/images/' . strtolower($article->category) . '.jpg') }}"
+                                    alt="">
                             </div>
-                            <div class="buttons">
-                                <a class="view" href=""><i class="fas fa-eye"></i> Ko'rish</a>
-                                <a class="download" href=""><i class="fas fa-download"></i> Yuklab olish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="latest-conference">
-                    <div class="latest-article-in">
-                        <div class="latest-article-img">
-                            <img src="assets/img/Business.jpg" alt="">
-                        </div>
-                        <div class="latest-article-texts">
-                            <div class="article-title">
-                                <h4>Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Unde</h4>
-                            </div>
-                            <div class="buttons">
-                                <a class="view" href=""><i class="fas fa-eye"></i> Ko'rish</a>
-                                <a class="download" href=""><i class="fas fa-download"></i> Yuklab olish</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="latest-conference">
-                    <div class="latest-article-in">
-                        <div class="latest-article-img">
-                            <img src="assets/img/Cyber.jpg" alt="">
-                        </div>
-                        <div class="latest-article-texts">
-                            <div class="article-title">
-                                <h4>Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Unde</h4>
-                            </div>
-                            <div class="buttons">
-                                <a class="view" href=""><i class="fas fa-eye"></i> Ko'rish</a>
-                                <a class="download" href=""><i class="fas fa-download"></i> Yuklab olish</a>
+                            <div class="latest-article-texts">
+                                <div class="article-title">
+                                    <h4>{{ $article->title }}</h4>
+                                </div>
+                                <div class="buttons">
+                                    <a class="view" href="{{ asset('storage/' . $article->file_path) }}"  target="_blank">
+                                        <i class="fas fa-eye"></i> Ko'rish</a>
+                                    <a class="download" href="{{ asset('storage/' . $article->file_path) }}" download>
+                                        <i class="fas fa-download"></i> Yuklab olish
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="latest-conference">
-                    <div class="latest-article-in">
-                        <div class="latest-article-img">
-                            <img src="assets/img/Technology.jpg" alt="">
-                        </div>
-                        <div class="latest-article-texts">
-                            <div class="article-title">
-                                <h4>Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Unde</h4>
-                            </div>
-                            <div class="buttons">
-                                <a class="view" href=""><i class="fas fa-eye"></i> Ko'rish</a>
-                                <a class="download" href=""><i class="fas fa-download"></i> Yuklab olish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -279,66 +230,30 @@
                 <h1>Eng so'ngi Anjumanlar</h1>
             </div>
             <div class="latest-conferences-content">
-                <div class="latest-conference">
-                    <div class="latest-conference-in">
-                        <div class="latest-conference-img">
-                            <img src="assets/img/carousel-1.jpg" alt="">
-                            <div class="latest-conference-add-data">
-                                <i class="fas fa-calendar-alt"></i>
-                                jan 12 2025
+                @foreach ($latestConference as $conference)
+                    <div class="latest-conference">
+                        <div class="latest-conference-in">
+                            <div class="latest-conference-img">
+                                <img src="assets/img/carousel-1.jpg" alt="">
+                                <div class="latest-conference-add-data">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    {{ $conference->created_at->format('M d Y') }}
+                                </div>
+                            </div>
+                            <div class="latest-conference-texts">
+                                <a class="h4"
+                                    href="{{ route('conferences.show', ['conference' => $conference->id]) }}">{{ $conference->title }}</a>
+                                <p>{{ $conference->description1 }}</p>
+                                <a class="read-more"
+                                    href="{{ route('conferences.show', ['conference' => $conference->id]) }}">Batafsil <i
+                                        class="fas fa-angle-right"></i></a>
                             </div>
                         </div>
-                        <div class="latest-conference-texts">
-                            <a class="h4" href="">Lorem ipsum dolor sit amet
-                                consectetur adipisicing elit. Unde</a>
-                            <p>Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Vel, officiis?</p>
-                            <a class="read-more" href="">Read More <i class="fas fa-angle-right"></i></a>
-                        </div>
                     </div>
-                </div>
-                <div class="latest-conference">
-                    <div class="latest-conference-in">
-                        <div class="latest-conference-img">
-                            <img src="assets/img/carousel-2.jpg" alt="">
-                            <div class="latest-conference-add-data">
-                                <i class="fas fa-calendar-alt"></i>
-                                jan 12 2025
-                            </div>
-                        </div>
-                        <div class="latest-conference-texts">
-                            <a class="h4" href="">Lorem ipsum dolor sit amet
-                                consectetur adipisicing elit. Unde</a>
-                            <p>Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Vel, officiis?</p>
-                            <a class="read-more" href="">Read More <i class="fas fa-angle-right"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="latest-conference">
-                    <div class="latest-conference-in">
-                        <div class="latest-conference-img">
-                            <img src="assets/img/carousel-1.jpg" alt="">
-                            <div class="latest-conference-add-data">
-                                <i class="fas fa-calendar-alt"></i>
-                                jan 12 2025
-                            </div>
-                        </div>
-                        <div class="latest-conference-texts">
-                            <a class="h4" href="">Lorem ipsum dolor sit amet
-                                consectetur adipisicing elit. Unde</a>
-                            <p>Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Vel, officiis?</p>
-                            <a class="read-more" href="">Read More <i class="fas fa-angle-right"></i></a>
-
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
     <!--Latest Conferences End-->
 
-    @endsection
-
+@endsection

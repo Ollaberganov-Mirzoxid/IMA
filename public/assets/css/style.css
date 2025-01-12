@@ -92,7 +92,7 @@ body {
     font-size: 18px;
 }
 
-.navbar.scrolled .auth{
+.navbar.scrolled .auth {
     color: black;
 }
 
@@ -209,7 +209,7 @@ body {
     justify-content: end;
 }
 
-.search-main{
+.search-main {
     display: flex;
     align-items: center;
     justify-content: end;
@@ -227,7 +227,7 @@ body {
     background-color: #00d1f9;
 }
 
-.search i{
+.search i {
     width: 44px;
     height: 44px;
     display: flex;
@@ -259,7 +259,7 @@ body {
     font-weight: bold;
 }
 
-.navbar.scrolled .search input{
+.navbar.scrolled .search input {
     color: #001442;
 }
 
@@ -286,11 +286,11 @@ body {
 }
 
 
-.auth{
+.auth {
     width: 100%;
 }
 
-.auth{
+.auth {
     display: flex;
     color: #f2f2f2;
     justify-content: end;
@@ -304,18 +304,19 @@ body {
     gap: 5px;
 }
 
-.login .main img{
+.login .main img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
 }
 
-.profile-name{
+.profile-name {
     margin: 0;
     font-size: 20px;
     font-weight: 600;
 }
-.profile-header i{
+
+.profile-header i {
     display: flex;
     color: #00d1f9;
     background-color: #f2f2f2;
@@ -333,7 +334,7 @@ body {
     /* background-color: #F2F9F9; */
 }
 
-.navbar.scrolled .dropdown-content{
+.navbar.scrolled .dropdown-content {
     display: none;
 }
 
@@ -348,7 +349,7 @@ body {
     position: absolute;
     top: 90px;
     right: 0;
-    background-color: #00d1f9   ;
+    background-color: #00d1f9;
     overflow: hidden;
     z-index: 1;
 }
@@ -368,18 +369,20 @@ body {
     border: none;
     cursor: pointer;
 }
+
 .dropdown-content form button {
     color: red;
 }
-.dropdown-content a:hover{
+
+.dropdown-content a:hover {
     transition: 500ms;
-	padding-left: 8px;
+    padding-left: 8px;
     color: #fff;
 }
 
-.dropdown-content form button:hover{
+.dropdown-content form button:hover {
     transition: 500ms;
-	padding-left: 8px;
+    padding-left: 8px;
 }
 
 /*navbar css end*/
@@ -920,14 +923,17 @@ body {
 }
 
 .latest-conferences-content {
+    display: grid;
     width: 100%;
     gap: 2rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 ta ustun */
+
     justify-content: space-between;
 }
 
 .latest-conference {
-    width: 420px;
+    width: 320px;
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 1.5rem;
 
@@ -992,15 +998,19 @@ body {
     border-bottom-left-radius: 10px !important;
 }
 
-.latest-conference-texts p, 
+.latest-conference-texts p,
 .latest-conference-texts a.h4 {
     width: 100%;
-    word-wrap: break-word; 
-    overflow: hidden; /* Matnni yashirish */
-    text-overflow: ellipsis; 
-    height: 3.5em; /* 3 qator uchun balandlik */
-    white-space: normal; /* Matnni ko'proq qatorda ko'rsatish */
-    line-height: 1.2em; /* Har bir qatordagi masofa */
+    word-wrap: break-word;
+    overflow: hidden;
+    /* Matnni yashirish */
+    text-overflow: ellipsis;
+    height: 3.5em;
+    /* 3 qator uchun balandlik */
+    white-space: normal;
+    /* Matnni ko'proq qatorda ko'rsatish */
+    line-height: 1.2em;
+    /* Har bir qatordagi masofa */
 }
 
 .latest-conference-texts a {
@@ -1158,40 +1168,40 @@ ul {
     justify-content: center;
 }
 
-.header-container-in h4{
+.header-container-in h4 {
     color: #00d1f9;
     font-size: 3.5rem;
     text-align: center;
 }
 
-.login-container{
+.login-container {
     height: 700px;
 }
 
-.log-reg{
+.log-reg {
     padding: 40px;
     border-radius: 10px;
     background-color: #F2F9F9;
 }
 
-.login-container-in h4{
+.login-container-in h4 {
     color: #00d1f9;
     font-size: 2.5rem;
     text-align: center;
 }
 
-form{
+form {
     color: #00d1f9;
 }
 
 form .name,
 form .email,
-form .password{
+form .password {
     display: flex;
     padding: 10px;
 }
 
-.log-reg input{
+.log-reg input {
     width: 270px;
     padding: 10px;
     border: 1px solid #00d1f9;
@@ -1200,14 +1210,14 @@ form .password{
 
 .name .icon,
 .email .icon,
-.password .icon{
+.password .icon {
     width: 40px;
     padding: 10px;
     text-align: center;
     border: 1px solid #00d1f9;
 }
 
-.reg-links{
+.reg-links {
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
@@ -1215,23 +1225,23 @@ form .password{
     font-size: 14px;
 }
 
-.reg-links p{
+.reg-links p {
     color: black;
     font-weight: bold;
 }
 
-.reg-links a{
+.reg-links a {
     color: #00d1f9;
     font-weight: bold;
     text-decoration: none;
 }
 
-.log-reg-submit{
+.log-reg-submit {
     display: flex;
     justify-content: center;
 }
 
-.log-reg-submit button{
+.log-reg-submit button {
     border: none;
     color: #fff;
     font-weight: bold;
@@ -1242,31 +1252,29 @@ form .password{
 
 /*Conference show CSS Start*/
 
-.top-conference-head{
+.top-conference-head {
     padding-bottom: 50px;
 }
 
-.top-conference-head h5{
+.top-conference-head h5 {
     font-weight: bold;
 }
 
-.top-conference-in{
-    background:#F2F9F9; 
-    margin-bottom:20px
+.top-conference-in {
+    background: #F2F9F9;
+    margin-bottom: 20px
 }
 
-.top-conference-in .latest-conf-date{
+.top-conference-in .latest-conf-date {
     padding: 20px;
     padding-bottom: 0px;
 }
 
-.top-conference-in .latest-conf-date span{
+.top-conference-in .latest-conf-date span {
     color: #00d1f9
 }
 
-.top-conference
-
-.latest-conference .main-conference-in {
+.top-conference .latest-conference .main-conference-in {
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -1281,11 +1289,11 @@ form .password{
     border-bottom-left-radius: 10px !important;
 }
 
-.main-conference-texts p, 
+.main-conference-texts p,
 .main-conference-img-2 p,
 .main-conference-texts a.h4 {
     width: 100%;
-    word-wrap: break-word; 
+    word-wrap: break-word;
 }
 
 .main-conference-texts a {
@@ -1300,7 +1308,7 @@ form .password{
     transition: 0.5s;
 }
 
-.main-conference-texts p{
+.main-conference-texts p {
     padding-top: 20px;
 }
 
@@ -1319,7 +1327,7 @@ form .password{
     transition: 0.5s;
 }
 
-.main-conference-img-2-all{
+.main-conference-img-2-all {
     width: 850px;
     display: flex;
     gap: 20px;
@@ -1342,8 +1350,80 @@ form .password{
     transition: 0.5s;
 }
 
-.main-conference-img-2 p{
+.main-conference-img-2 p {
     text-align: justify;
     padding-top: 20px;
 }
+
 /*Conference show CSS End/
+
+            /* Modalning asosiy uslubi */
+.modal {
+    display: none;
+    /* Avval yashirin */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal .modal-content .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal .modal-content .modal-header h3{
+    font-weight: bold;
+    color: #00d1f9;
+}
+
+.modal .modal-content .close {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.modal .modal-content .close:hover {
+    color: red;
+}
+
+.modal .modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.modal .modal-content input,
+.modal .modal-content select,
+.modal .modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal .modal-content button {
+    background-color: #4343ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal .modal-content button:hover {
+    background-color: #3333cc;
+}

@@ -7,12 +7,11 @@
     <div class="links">
         <ul class="nav-links">
             <li class="{{ request()->routeIs('/') ? 'active' : '' }}">
-                <a class="{{ request()->routeIs('/') ? 'active' : '' }}" 
-                    href="{{ route('/') }}">Asosiy</a>
+                <a class="{{ request()->routeIs('/') ? 'active' : '' }}" href="{{ route('/') }}">Asosiy</a>
             </li>
             <li class="{{ request()->routeIs('about') ? 'active' : '' }}">
-                <a class="{{ request()->routeIs('about') ? 'active' : '' }}" 
-                    href="{{ route('about') }}">Biz Haqimizda</a>
+                <a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">Biz
+                    Haqimizda</a>
             </li>
             <li class="{{ request()->routeIs('articles.index') ? 'active' : '' }}">
                 <a class="{{ request()->routeIs('articles.index') ? 'active' : '' }}"
@@ -42,12 +41,64 @@
                     <a href="{{ route('profile.edit') }}"><i class="fas fa-pen"></i> Tahrirlash</a>
                     {{-- <a href="{{ route('create_articles') }}"><i class="fas fa-plus"></i> Maqola Qo'shish</a> --}}
                     <a href="#"><i class="fas fa-newspaper"></i> Mening Maqolalarim</a>
+                    <a href="#" id="openModal"><i class="fas fa-newspaper"></i> Maqola yuklash</a>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button><i class="fas fa-sign-out-alt"></i> Chiqish</button>
                     </form>
                 </div>
             </div>
+
+            <div class="modal" id="myModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Maqola Yuklash</h3>
+                        <span class="close" id="closeModal">&times;</span>
+                    </div>
+                    <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+
+                        <label for="title">Sarlavha (Title):</label>
+                        <input type="text" id="title" name="title" placeholder="Sarlavha kiriting" required>
+            
+                        <label for="file">Fayl (File):</label>
+                        <input type="file" id="file" name="file_path" required>
+            
+                        <label for="category">Kategoriya (Category):</label>
+                        <select id="category" name="category" required>
+                            <option value="Technology">Texnologiya</option>
+                            <option value="Business">Biznes</option>
+                            <option value="Cyber">Kiberxavfsizlik</option>
+                            <option value="Sport">Sport</option>
+                        </select>
+            
+                        <button type="submit">Yuklash</button>
+                    </form>
+                </div>
+            </div>
+
+            <script>
+                const modal = document.getElementById("myModal");
+                const openModal = document.getElementById("openModal");
+                const closeModal = document.getElementById("closeModal");
+            
+                // Modalni ochish
+                openModal.addEventListener("click", () => {
+                    modal.style.display = "flex";
+                });
+            
+                // Modalni yopish
+                closeModal.addEventListener("click", () => {
+                    modal.style.display = "none";
+                });
+            
+                // Fondan bosib yopish
+                window.addEventListener("click", (e) => {
+                    if (e.target === modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            </script>
 
             <script>
                 function toggleDropdown() {

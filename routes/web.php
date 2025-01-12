@@ -46,7 +46,7 @@ Route::delete('conferences/{conference}/delete', [ConferenceController::class, '
 //Maqolala uchun Marshrutlar
 Route::get('articles', [ArticleController::class, 'index'])->name('articles.index'); //Barchasini ko'rish sahifasi
 Route::get('articles/create', [ArticleController::class, 'create'])->name('articles.create'); //Yaratish ko'rish sahifasi
-Route::post('articles/create', [ArticleController::class, 'store'])->name('articles.store'); //Yaraish so'rovi
+Route::post('article/create', [ArticleController::class, 'store'])->name('article.store'); //Yaraish so'rovi
 Route::get('articles/{articles}/edit', [ConferenceController::class, 'edit'])->name('conferences.edit'); //O'zgartirish ko'rish sahifasi
 Route::put('articles/{articles}/edit', [ConferenceController::class, 'update'])->name('conferences.update'); //O'zgartirish so'rovi
 Route::delete('articles/{articles}/delete', [ConferenceController::class, 'delete'])->name('conferences.delete'); //O'chirish so'rovi

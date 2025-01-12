@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('file');
-            $table->string('status');
+            $table->string('file_path')->nullable();
+            $table->string('status')->default('yangi');
             $table->string('category');
             $table->timestamps();
         });
