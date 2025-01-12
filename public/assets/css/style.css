@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
     scrollbar-width: none;
 }
 
@@ -7,8 +9,6 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -244,6 +244,7 @@ body {
 }
 
 .search input {
+    outline: none;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1265,4 +1266,84 @@ form .password{
 
 .top-conference
 
+.latest-conference .main-conference-in {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.main-conference-texts {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom-right-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+.main-conference-texts p, 
+.main-conference-img-2 p,
+.main-conference-texts a.h4 {
+    width: 100%;
+    word-wrap: break-word; 
+}
+
+.main-conference-texts a {
+    text-decoration: none;
+}
+
+.latest-conference-texts .h4 {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #001442;
+    margin-bottom: 1rem !important;
+    transition: 0.5s;
+}
+
+.main-conference-texts p{
+    padding-top: 20px;
+}
+
+.main-conference-img {
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.main-conference-img img {
+    width: 100%;
+    height: 280px;
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+    transition: 0.5s;
+}
+
+.main-conference-img-2-all{
+    width: 850px;
+    display: flex;
+    gap: 20px;
+}
+
+.main-conference-img-2 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.main-conference-img-2 img {
+    float: left !important;
+    width: 100%;
+    height: 250px;
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+    transition: 0.5s;
+}
+
+.main-conference-img-2 p{
+    text-align: justify;
+    padding-top: 20px;
+}
 /*Conference show CSS End/
